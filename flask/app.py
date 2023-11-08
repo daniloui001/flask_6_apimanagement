@@ -1,29 +1,6 @@
 import requests 
 import json 
 
-"""
-1. GET Request
-   ```sh
-   curl https://jsonplaceholder.typicode.com/posts/1
-   ```
-   
-2. POST Request
-   ```sh
-   curl -X POST https://jsonplaceholder.typicode.com/posts -H "Content-Type: application/json" -d '{"title": "foo", "body": "bar", "userId": 1}'
-   ```
----
-
-3. PUT Request
-   ```sh
-   curl -X PUT https://jsonplaceholder.typicode.com/posts/1 -H "Content-Type: application/json" -d '{"id": 1, "title": "foo", "body": "bar", "userId": 1}'
-   ```
-
-4. DELETE Request
-   ```sh
-   curl -X DELETE https://jsonplaceholder.typicode.com/posts/1
-   ```
-"""
-
 # GET Request
 
 response = requests.get("https://jsonplaceholder.typicode.com/posts/1")

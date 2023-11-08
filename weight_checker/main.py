@@ -3,40 +3,34 @@ import function_app
 import json
 import pandas as pd 
 
-@functions_app.http
+@function_app.http
 def hello_http(request):
-
-    # systolic, this is will be a number 
-    # diastolic, this is also be a number 
-    # idea: we will sum systolic + diastolic, to get some count 
-    # if the count is above 120+80=200, so if > 200, return response
-    # but also say that they are potentially pre-hypertensive 
 
     request_args = request.args
 
-    if request_args and "systolic" in request_args:
-        systolic_value = request_args["systolic"]
+    if request_args and "weight" in request_args:
+        weight = request_args["weight"]
     else:
-        systolic_value = 120
+        weight = 100
 
-    if request_args and "diastolic" in request_args:
-        diastolic_value = request_args["diastolic"]
+    if request_args and "height" in request_args:
+        height = request_args["height"]
     else:
-        diastolic_value = 70
+        height = 175
 
     # Step 1 convert everything to numbers 
-    systolic_num = int(systolic_value)
-    diastolic_num = int(diastolic_value)
+    weight_num = int(weight)
+    height_num = int(height)
 
     # Step 2 we now some them all together 
-    bp_sum = systolic_num + diastolic_num 
+    weight_height_sum = weight_num + height_num 
 
     # Step 3 create a json object to return to the user 
     output = json.dumps(
         {
-            "entered_systolic" : systolic_num, 
-            "entered_diastolic": diastolic_num, 
-            "bp_sum" : bp_sum
+            "entered_weight" : weight_num, 
+            "entered_height": height_num, 
+            "weight_height_sum" : weight_height_sum
         }
     )
 
