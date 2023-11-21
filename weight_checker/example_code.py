@@ -10,7 +10,7 @@ df[:1]['weight']
 
 
 analysis = requests.get(
-    url = 'https://us-east1-hants-504-2023.cloudfunctions.net/bp-checker-hants',
+    url = 'https://us-east1-hants-504-2023.cloudfunctions.net/azure_function_dani',
     params = ({
         "weight": df[:1]['weight'],
         "height": df[:1]['height']
